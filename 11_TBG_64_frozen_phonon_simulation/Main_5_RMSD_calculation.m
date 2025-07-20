@@ -65,8 +65,8 @@ set(gca,'fontsize',15,'linewidth',1);
 
 %% calculate the total RMSD
 rmsd_value12 = sqrt(sum(sig12.^2));
-fprintf('rmsd beta 2 vs beta  = %.2f angstrom\n',rmsd_value12);
-fprintf('rmsd beta 2 vs beta  = %.2f pm\n',rmsd_value12*100);
+fprintf('rmsd = %.2f angstrom\n',rmsd_value12);
+fprintf('rmsd = %.2f pm\n',rmsd_value12*100);
 
 figure(12);
 % Adjust its size
