@@ -4,7 +4,15 @@
 
 Na Yeon Kim<sup>1*</sup>, Hanfeng Zhong<sup>1,2*</sup>, Jianhua Zhang<sup>3*</sup>, Colum M. O’Leary<sup>1*</sup>, Yuxuan Liao<sup>1</sup>, Ji Zou<sup>4</sup>, Haozhi Sha<sup>1</sup>, Minh Pham<sup>1</sup>, Weiyi Li<sup>1</sup>, Yakun Yuan<sup>1</sup>, Ji-Hoon Park<sup>5</sup>, Dennis Kim<sup>6</sup>, Huaidong Jiang<sup>3</sup>, Jing Kong<sup>5</sup>, Miaofang Chi<sup>7</sup>, Jianwei Miao<sup>1†</sup>,   
 
-
+*<sup>1</sup>Department of Physics and Astronomy and California NanoSystems Institute, University of California, Los Angeles, CA, USA.*
+*<sup>2</sup>Department of Electrical and Computer Engineering, University of California, Los Angeles, CA, USA.*
+*<sup>3</sup>Center for Transformative Science, ShanghaiTech University, Shanghai, China.*
+*<sup>4</sup>Department of Physics, University of Basel, Basel, Switzerland.*
+*<sup>5</sup>Department of Electrical Engineering and Computer Science, Massachusetts Institute of Technology, Cambridge, MA, USA.*
+*<sup>6</sup>Department of Chemistry and Biochemistry, University of California, Los Angeles, CA, USA.*
+*<sup>7</sup>Center for Nanophase Materials Sciences, Oak Ridge National Laboratory, Oak Ridge, TN, USA.*   
+**These authors contributed equally to this work.*    
+*†Correspondence author: J.M. (j.miao@ucla.edu).*     
 
 
 
