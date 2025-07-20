@@ -1,4 +1,4 @@
-Supplementary Data Codes
+# Supplementary Data Codes
 
 **Three-dimensional imaging of individual carbon atoms**
 
