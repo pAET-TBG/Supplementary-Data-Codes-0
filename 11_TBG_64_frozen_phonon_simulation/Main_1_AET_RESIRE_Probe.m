@@ -20,7 +20,7 @@ angles         = cast(angles,dtype);
 % compute normal vector of rotation matrix
 matR = zeros(3,3);
 if length(rotation)~=3
-    disp('rotation not recognized. Set rotation = ZYX/n'); rotation = 'ZYX';
+    disp('rotation not recognized. Set rotation = ZYX\n'); rotation = 'ZYX';
 end
 for i=1:3
     switch rotation(i)
