@@ -14,8 +14,6 @@ Na Yeon Kim<sup>1*</sup>, Hanfeng Zhong<sup>1,2*</sup>, Jianhua Zhang<sup>3*</su
 **These authors contributed equally to this work.*         
 *†Correspondence author: J.M. (j.miao@ucla.edu).*          
 
-
-
 ## Contents
 
 - [Overview](#overview)
@@ -23,6 +21,12 @@ Na Yeon Kim<sup>1*</sup>, Hanfeng Zhong<sup>1,2*</sup>, Jianhua Zhang<sup>3*</su
 - [Repositary Contents](#repositary-contents)
   
 # Overview
+
+This repository provides all experimental and simulated data, along with source code for ptychographic and tomographic reconstruction, atom tracing, position refinement, and data
+analysis associated with our study. We report the first experimental determination of the 3D coordinates of individual carbon atoms with picometer-scale precision using ptychographic
+atomic electron tomography (pAET). Using twisted bilayer graphene as a model system, our results reveal chiral lattice distortions and interlayer interactions that were previously
+inaccessible to conventional microscopy. We further demonstrate the generalizability of pAET to disordered and low-Z materials through simulations on amorphous carbon and a nitrogen-
+vacancy center in diamond. All resources are freely available for download and unrestricted use by the research community. We hope this repository supports further advances in high-precision 3D atomic imaging.
 
 # System Requirements
 
