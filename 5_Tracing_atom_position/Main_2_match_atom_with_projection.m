@@ -47,7 +47,7 @@ for tempi = 1:size(angles,1)
     clear rotScanPos  RotM 
 end
 
-%% crop the sub region in  projs of each tilting angles 
+%% crop the sub region in  projs of each tilting angles
 cropProjs = zeros(size( projs));
 smallRegion = 18;
 [X, Y] = meshgrid(-smallRegion:smallRegion, -smallRegion:smallRegion);                 % Generate the grid
