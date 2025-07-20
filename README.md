@@ -108,7 +108,7 @@ Run the 6 codes inside the folder `Main_calculate_antimeron_lower.m`,  `Main_cal
 
 ### 11. Twisted Bilayer Graphene Multislice Simulation with 64 Frozon Phonons
 
-Folder: [Twisted bilayer graphene multislice simulation with 32 frozon phonons](./11_TBG_64_frozen_phonon_simulation)
+Folder: [Twisted bilayer graphene multislice simulation with 64 frozon phonons](./11_TBG_64_frozen_phonon_simulation)
 
 Run the codes inside the folder `Main_1_AET_RESIRE_Probe.m`,  `Main_2_polynomial_tracing_iteration.m`,  `Main_3_Match_Atom_With_Position.m`, and  `Main_4_Atom_Position_refinement.m` to obatin the traced atom positions for the twisted bilayer graphene multislice simulation with 64 frozon phonons.
 
