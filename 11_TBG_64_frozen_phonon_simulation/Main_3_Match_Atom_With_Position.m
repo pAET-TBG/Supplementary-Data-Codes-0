@@ -14,31 +14,8 @@ label = atom_info.label;
 res = 0.19/2;
 
 %% recenter the atom position and crop the projections
-% projs = projs(1000-699:1000+700,1000-699:1000+700,:);
-% atompos for the second round
 projs = projs(750-579:750+580,750-739:750+740,:);
-% atompos(1,:) = atompos(1,:);
-% atompos(2,:) = atompos(2,:);
-
 atomPos = atompos./res;
-% index = (atomPos(1,:)>-630)&(atomPos(1,:)<740)&(atomPos(2,:)>-660)&(atomPos(2,:)<650);
-% atomPos = atomPos(:,index);
-% label = label(index);
-% clear index
-
-%% adjust angle
-% angles(3,:) = importdata('Angles_1208_0123_CFOV_BackSub_Norm_AngleRe_Proj_3_Sigma_6.5.mat');
-% points    = [-470 -102 
-%              -170  508 
-%               326  674
-%               448  48
-%               130 -561
-%              -356 -588]'.*0.997; 
-% points(1,:) = points(1,:) + 30;
-% points(2,:) = points(2,:) - 65;
-% isInside  = inpolygon(atomPos(1,:), atomPos(2,:), points(1,:), points(2,:));
-% atomPos   = atomPos(:,isInside);
-% label     = label(isInside);
 
 %% calculate the scan position
 halfColnum = 0;                                                            % the half number of the column scan position
@@ -54,7 +31,6 @@ flatScanPos(2,:) = flatScanPos(2,:).*(size(projs,2))./(halfRownum*2+1);
 clear tempx tempy
 
 %% calculate the scan position for each tilting angles
-% scanPos (1,:,:) is the y-position, (2,:,;) is the x-position,
 scanPos = zeros(2,(halfColnum*2+1)*(halfRownum*2+1),size(angles,1));       % initialize the scan position for all tilting angles (matrix size: (2, N, number of tilting angles)) 
 for tempi = 1:size(angles,1)
     % calculate the rotation matrix
@@ -100,19 +76,7 @@ for tempi = 1:size(projs,3)
     end
     tempCP(tempCP>0) = 1;  
     cropProjs(:,:,tempi) = tempCP.*projs(:,:,tempi);
-    figure(109);
-    imagesc(projs(:,:,tempi));colormap 'gray';hold on
-    hold off
-    axis equal
-    figure(110);
-    imagesc(projs(:,:,tempi));colormap 'gray';hold on
-    scatter(rotAtompos(2,label==1),rotAtompos(1,label==1),'r.');hold on
-    scatter(rotAtompos(2,label==2),rotAtompos(1,label==2),'b.');hold on
-    hold off
-    axis equal
-
 end
-% figure();img(cropProjs,[],'colormap','gray')
 
 atom = atomPos.*res; 
 save([pwd,'/output_data/atom_Refinement.mat'],'atom')

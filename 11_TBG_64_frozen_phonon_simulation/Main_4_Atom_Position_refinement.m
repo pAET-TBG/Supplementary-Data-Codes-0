@@ -20,10 +20,6 @@ angles      = importdata('angles_Refinement.mat');
 model       = importdata('atom_Refinement.mat');
 model_org   = importdata('atom_Refinement.mat');
 atoms       = importdata('label_Refinement.mat');
-
-% model(3,model(3,:)>0) = mean(model(3,model(3,:)>0));
-% model(3,model(3,:)<0) = mean(model(3,model(3,:)<0));
-% model_org = model;
 % running the least square fit for H and B factor estimation, then use them 
 % to perform position refinement based on gradient descent
 
@@ -40,8 +36,7 @@ projections = My_paddzero(projections,size(projections) + [50 50 0],'double');
 halfWidth = 10;
 % the atomic number for different type:
 % use 28 for type 1, 45 for type 2, 78 for type 3; (C: 6 Si: 14)
-Z_arr   = [6, 14];  
-% Z_arr   = [6];    
+Z_arr   = [6, 14]; 
 % indicate the pixel size for measured projections
 Res     = 0.19/2;            
 
@@ -61,12 +56,11 @@ ub = [2  4;
       7.5  7.5];                                                         % the upper bound of each parameter
 model_refined = model;                                                     % the positions of each atom prepare for refining
 
-% opt = optimset('TolFun',1e-12);                                            % option method for optimization
+% option method for optimization
 opt = optimset('TolFun', 1e-12, 'TolX', 1e-8, 'MaxIter', 1000, 'Display', 'iter');
 
 position_grad = zeros(size(model));
 
-% initial_step_size = 1000000;
 for jjjj=1:10
     fprintf('iteration num: %d; \n',jjjj);
     x0 = para0;                                                            % the parameter of the function perpared for optimization
