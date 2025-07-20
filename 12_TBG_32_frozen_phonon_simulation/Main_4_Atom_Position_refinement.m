@@ -5,9 +5,9 @@
 % and the measured projections
 clear;clc;
 
-addpath([pwd,'\src\'])
-addpath([pwd,'\input_data\'])
-addpath([pwd,'\output_data\'])
+addpath([pwd,'/src/'])
+addpath([pwd,'/input_data/'])
+addpath([pwd,'/output_data/'])
 
 % add the path to load measured projections and angles, you can comment it 
 % and move the projections and angles into input folder
@@ -15,15 +15,11 @@ addpath([pwd,'\output_data\'])
 
 % read in files: measured projections and angles; 
 % atomic position and types after classification (we use 17 previous)
-projections = (importdata('Projs_Tracing_Refinement_MS_SIM.mat'));
-angles      = (importdata('angles_Tracing_Refinement_MS_SIM.mat'));
-model       = (importdata('atom_Tracing_Refinement_MS_SIM.mat'));
-model_org   = (importdata('atom_Tracing_Refinement_MS_SIM.mat'));
-atoms       = (importdata('label_Tracing_Refinement_MS_SIM.mat'));
-
-% model(3,model(3,:)>0) = mean(model(3,model(3,:)>0));
-% model(3,model(3,:)<0) = mean(model(3,model(3,:)<0));
-% model_org = model;
+projections = importdata('Projs_Refinement.mat');
+angles      = importdata('angles_Refinement.mat');
+model       = importdata('atom_Refinement.mat');
+model_org   = importdata('atom_Refinement.mat');
+atoms       = importdata('label_Refinement.mat');
 % running the least square fit for H and B factor estimation, then use them 
 % to perform position refinement based on gradient descent
 
@@ -32,16 +28,13 @@ atoms       = (importdata('label_Tracing_Refinement_MS_SIM.mat'));
 projections = max(projections,0);                                          % the positivity constrain for each projections
 projections = projections(1:end,1:end,:);
 projections = My_paddzero(projections,size(projections) + [50 50 0],'double');
-% projections = projections - min(projections(projections>0));
-% projections = My_paddzero(projections,size(projections) + [50 50],'double');
 
 [N1,N2,num_pj] = size(projections);
 % the cropped bondary size for each atoms
 halfWidth = 10;
 % the atomic number for different type:
 % use 28 for type 1, 45 for type 2, 78 for type 3; (C: 6 Si: 14)
-Z_arr   = [6, 14];  
-% Z_arr   = [6];    
+Z_arr   = [6, 14];
 % indicate the pixel size for measured projections
 Res     = 0.19/2;            
 
@@ -61,12 +54,11 @@ ub = [2   ;
       7.5];                                                                % the upper bound of each parameter
 model_refined = model;                                                     % the positions of each atom prepare for refining
 
-% opt = optimset('TolFun',1e-12);                                            % option method for optimization
+% option method for optimization
 opt = optimset('TolFun', 1e-12, 'TolX', 1e-8, 'MaxIter', 1000, 'Display', 'iter');
 
 position_grad = zeros(size(model));
 
-% initial_step_size = 1000000;
 for jjjj=1:14
     fprintf('iteration num: %d; \n',jjjj);
     x0 = para0;                                                            % the parameter of the function perpared for optimization
@@ -90,7 +82,6 @@ for jjjj=1:14
     [y_pred,~] = Cal_Bproj_2type(para0, xdata, projections);
     
     xdata.projections = [];
-    %% 100*(0.95)
     xdata.step_sz    = 0.1;
     xdata.iterations = 10;
     [y_pred,para0,errR] = gradient_B_2type_difB(para0, xdata, projections);

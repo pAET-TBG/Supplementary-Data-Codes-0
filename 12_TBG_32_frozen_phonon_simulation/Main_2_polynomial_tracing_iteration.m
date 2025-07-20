@@ -12,7 +12,7 @@ FinalVol = importdata([pwd,'/output_data/tBLG_reconstruction_volume.mat']);
 FinalVol = FinalVol(20:end-20,20:end-20,:);
 FinalVol_org = FinalVol;
 % padded the reconstruction with zero 
-FinalVol_org = My_paddzero(FinalVol_org,size(FinalVol_org)+20);
+FinalVol_org = My_paddzero(FinalVol_org,size(FinalVol_org)+20,'double');
 % read in files: reconstruction volume
 
 for iter = 1:23
@@ -53,7 +53,7 @@ for iter = 1:23
     Dsetvol     = interp3(Y,X,Z,Dsetvol,Yi,Xi,Zi,'spline',0);
     
     % padded the reconstruction with zero 
-    FinalVol    = My_paddzero(Dsetvol,size(Dsetvol)+20);
+    FinalVol    = My_paddzero(Dsetvol,size(Dsetvol)+20,'double');
     
     % get polynomial power array
     fitCoeff = [];

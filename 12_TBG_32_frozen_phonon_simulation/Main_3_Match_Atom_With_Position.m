@@ -1,9 +1,9 @@
 clear;
 clc;
 %% load data
-addpath([pwd,'\src\'])
-addpath([pwd,'\input_data\'])
-addpath([pwd,'\output_data\'])
+addpath([pwd,'/src/'])
+addpath([pwd,'/input_data/'])
+addpath([pwd,'/output_data/'])
 projs     = importdata([pwd,'/input_data/Projections.mat']);
 angles    = importdata([pwd,'/input_data/Angles.mat' ]);
 atom_info = importdata('atom_tracing_manual_model.mat');
@@ -28,7 +28,6 @@ flatScanPos(2,:) = flatScanPos(2,:).*(size(projs,2))./(halfRownum*2+1);
 clear tempx tempy
 
 %% calculate the scan position for each tilting angles
-% scanPos (1,:,:) is the y-position, (2,:,;) is the x-position,
 scanPos = zeros(2,(halfColnum*2+1)*(halfRownum*2+1),size(angles,1));       % initialize the scan position for all tilting angles (matrix size: (2, N, number of tilting angles)) 
 for tempi = 1:size(angles,1)
     % calculate the rotation matrix
@@ -43,17 +42,6 @@ for tempi = 1:size(angles,1)
     scanPos(2,:,tempi) = rotScanPos(2,:);  
     clear rotScanPos  RotM 
 end
-
-
-%% the code below is used to check whether the scan position is correct
-% for tempi = 1:size(angles,1)
-%     rotScanPos(1,:) = scanPos(1,:,tempi);
-%     rotScanPos(2,:) = scanPos(2,:,tempi);
-%     figure(13);
-%     imagesc( projs(:,:,tempi));hold on
-%     scatter(rotScanPos(2,:),rotScanPos(1,:),'ro');hold on
-%     hold off    
-% end
 
 %% check position for each  projs 
 %% crop the sub region in  projs of each tilting angles 
@@ -85,19 +73,7 @@ for tempi = 1:size(projs,3)
     end
     tempCP(tempCP>0) = 1;  
     cropProjs(:,:,tempi) = tempCP.*projs(:,:,tempi);
-    figure(109);
-    imagesc(projs(:,:,tempi));colormap 'gray';hold on
-    hold off
-    axis equal
-    figure(110);
-    imagesc(projs(:,:,tempi));colormap 'gray';hold on
-    scatter(rotAtompos(2,label==1),rotAtompos(1,label==1),'r.');hold on
-    scatter(rotAtompos(2,label==2),rotAtompos(1,label==2),'b.');hold on
-    hold off
-    axis equal
-
 end
-% figure();img(cropProjs,[],'colormap','gray')
 
 atom = atomPos.*res; 
 save([pwd,'/output_data/atom_Refinement.mat'],'atom')
