@@ -2,7 +2,7 @@
 
 **Three-dimensional imaging of individual carbon atoms**
 
-Na Yeon Kim<sup>1*</sup>, Hanfeng Zhong<sup>1,2*</sup>, 
+Na Yeon Kim<sup>1*</sup>, Hanfeng Zhong<sup>1,2*</sup>, Jianhua Zhang<sup>3*</sup>, Colum M. O’Leary<sup>1*</sup>, Yuxuan Liao<sup>1</sup>, Ji Zou<sup>4</sup>, Haozhi Sha<sup>1</sup>,
 
 
 ## Contents
