@@ -106,5 +106,16 @@ Folder: [Calculate_Meron_Skyrmion](./10_Calculate_Meron_Skyrmion)
 
 Run the 6 codes inside the folder `Main_calculate_antimeron_lower.m`,  `Main_calculate_antimeron_upper_1.m`,  `Main_calculate_antimeron_upper_2.m`, `Main_calculate_meron_lower.m`, `Main_calculate_meron_upper.m`, and  `Main_calculate_skyrmion_lower.m` to obatin the merons-like and skyrmion-like structure in the experimental atomic model as well as their corresponding skyrmion number.
 
+### 11. Twisted Bilayer Graphene Multislice Simulation with 64 Frozon Phonons
+
+Folder: [Twisted bilayer graphene multislice simulation with 32 frozon phonons](./11_TBG_64_frozen_phonon_simulation)
+
+Run the codes inside the folder `Main_1_AET_RESIRE_Probe.m`,  `Main_2_polynomial_tracing_iteration.m`,  `Main_3_Match_Atom_With_Position.m`, and  `Main_4_Atom_Position_refinement.m` to obatin the traced atom positions for the twisted bilayer graphene multislice simulation with 64 frozon phonons.
+
+### 12. Twisted Bilayer Graphene Multislice Simulation with 32 Frozon Phonons
+
+Folder: [Twisted bilayer graphene multislice simulation with 32 frozon phonons](./12_TBG_32_frozen_phonon_simulation)
+
+Run the codes inside the folder `Main_1_AET_RESIRE_Probe.m`,  `Main_2_polynomial_tracing_iteration.m`,  `Main_3_Match_Atom_With_Position.m`, and  `Main_4_Atom_Position_refinement.m` to obatin the traced atom positions for the twisted bilayer graphene multislice simulation with 32 frozon phonons.
 
 
