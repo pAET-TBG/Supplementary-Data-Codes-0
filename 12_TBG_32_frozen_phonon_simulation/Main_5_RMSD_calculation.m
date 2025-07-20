@@ -2,9 +2,9 @@ clear;
 clc;
 
 %% load the atom data
-addpath([pwd, '\input_data\'])
-addpath([pwd, '\output_data\'])
-addpath([pwd, '\src\'])
+addpath([pwd, '/input_data/'])
+addpath([pwd, '/output_data/'])
+addpath([pwd, '/src/'])
 atompos_1 = importdata('atom_tracing_model_refinement_total.mat');
 atompos_2 = importdata('atom_tracing_model_original.mat');
 atompos_1 = atompos_1./0.99495;
