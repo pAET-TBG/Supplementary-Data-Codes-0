@@ -49,11 +49,11 @@ xdata.model     = model;                                                   % the
 xdata.angles    = angles;                                                  % the tilting angle for each projections
 
 para0 = [1 1.5;  
-         4.5 4.5];                                                % the initial parameter for the fitted function
+         4.5 4.5];                                                         % the initial parameter for the fitted function
 lb = [0   0;
-      1   1];                                                          % the lower bound of each paremeter
+      1   1];                                                              % the lower bound of each paremeter
 ub = [2  4;
-      7.5  7.5];                                                         % the upper bound of each parameter
+      7.5  7.5];                                                           % the upper bound of each parameter
 model_refined = model;                                                     % the positions of each atom prepare for refining
 
 % option method for optimization
@@ -84,7 +84,6 @@ for jjjj=1:10
     [y_pred,~] = Cal_Bproj_2type(para0, xdata, projections);
     
     xdata.projections = [];
-    %% 100*(0.95)
     xdata.step_sz    = 0.1;
     xdata.iterations = 10;
     [y_pred,para0,errR] = gradient_B_2type_difB(para0, xdata, projections);
