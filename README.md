@@ -48,55 +48,55 @@ This package has been tested with `Matlab` R2022b. All the codes have to run in 
 
 ### 1. Experiment Data
 
-Folder: [Measured_data](./1_Measured_data)
+Folder: [Measured_data](./01_Measured_data)
 
 This folder contains 13 experimental projections after ptychography reconstruction and alignment as well as their corresponding angles.
 
 ### 2. The Extended Ptychographical Iterative Engine (EPIE) Package
 
-Folder: [EPIE_package](./2_EPIE_package)
+Folder: [EPIE_package](./02_EPIE_package)
 
 Run the ptychography reconstruction code `Main_EPIE.m` to obtain the phase retrieval projections of the twisted bilayer graphene sample.
 
 ### 3. The Probe REal Space Iterative REconstruction (RESIRE) Package
 
-Folder: [RESIRE_package](./3_RESIRE_package)
+Folder: [RESIRE_package](./03_RESIRE_package)
 
 Run the tomography reconstruction code `Main_AET_RESIRE_probe.m` to obtain the 3D reconstruction of the twisted bilayer graphene sample.
 
 ### 4. Reconstructed 3D Volume
 
-Folder: [Final_reconstruction_volume](./4_Final_reconstruction_volume)
+Folder: [Final_reconstruction_volume](./04_Final_reconstruction_volume)
 
 This folder contains the 3D volume of the twisted bilayer graphene reconstructed from `Main_AET_RESIRE_probe.m`.
 
 ### 5. Atom Tracing
 
-Folder: [Tracing_atom_position](./5_Tracing_atom_position)
+Folder: [Tracing_atom_position](./05_Tracing_atom_position)
 
 Run the code `Main_1_polynomial_tracing_iteration.m` to trace the initial atomic positions from the reconstructed 3D volume. After the manual checking of the 3D atomic positions, run the code `Main_2_match_atom_with_projection.m` to match the traced atom with the experimental projections. This is the pre-processing step for atimic position refinement.
 
 ### 6. Atomic Position Refinement
 
-Folder: [Position_refinement](./6_Position_refinement)
+Folder: [Position_refinement](./06_Position_refinement)
 
 Run the code `Main_atom_position_refinement.m` to refine the 3D atomic coordinates in the twisted bilayer graphene sample.
 
 ### 7. Experimental Atomic Model
 
-Folder: [Final_coordinates](./7_Final_coordinates)
+Folder: [Final_coordinates](./07_Final_coordinates)
 
 The final 3D atomic model and chemical element types (i.e. Carbon and Silicon) of the twisted bilayer graphene sample.
 
 ### 8. Match Experimental and Flat Atomic Models
 
-Folder: [Match_atom](./8_Match_atom)
+Folder: [Match_atom](./08_Match_atom)
 
 Run the code `Main_match_atom.m` to match the experimental atominc model with the flat atomic model.
 
 ### 9. Displacement Caculation
 
-Folder: [Calculate_displacement](./9_Calculate_displacement)
+Folder: [Calculate_displacement](./09_Calculate_displacement)
 
 Run the code `Main_calculate_displacement.m` to obtain the displacement between the experimental atomic model and the flat atomic model.
 
